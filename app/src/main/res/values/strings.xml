@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AR Drawing</string>
+    <string name="home_title">AR Drawing</string>
+    <string name="home_subtitle">Select an image to start sketching</string>
+    <string name="btn_select_image">Select from Gallery</string>
+    <string name="permission_camera_needed">Camera permission is required for AR</string>
+    <string name="camera_paused">Camera Paused</string>
+
+    <!-- Controls -->
+    <string name="label_opacity">Opacity</string>
+    <string name="label_size">Size</string>
+    <string name="label_flip">Flip</string>
+    <string name="label_flip_h">horizontal</string>
+    <string name="label_flip_v">vertical</string>
+    <string name="label_flash">Flash</string>
+    <string name="label_lock">Lock</string>
+    <string name="label_locked">Locked</string>
+    <string name="label_reset">Reset</string>
+    <string name="label_pause">Pause</string>
+    <string name="label_resume">Resume</string>
+    <string name="back">Back</string>
+    <string name="system_camera">System Camera</string>
+
+    <!-- Format Strings -->
+    <string name="format_opacity">Opacity: %d%%</string>
+    <string name="format_size">Size: %d%%</string>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AR 繪畫</string>
+    <string name="home_title">AR 繪畫</string>
+    <string name="home_subtitle">選擇一張圖片開始繪製</string>
+    <string name="btn_select_image">從相簿選擇圖片</string>
+    <string name="permission_camera_needed">需要相機權限才能使用 AR 功能</string>
+    <string name="camera_paused">相機已暫停</string>
+
+    <string name="label_opacity">透明度</string>
+    <string name="label_size">大小</string>
+    <string name="label_flip">翻轉</string>
+    <string name="label_flip_h">水平</string>
+    <string name="label_flip_v">垂直</string>
+    <string name="label_flash">閃光燈</string>
+    <string name="label_lock">鎖定</string>
+    <string name="label_locked">已鎖定</string>
+    <string name="label_reset">還原</string>
+    <string name="label_pause">暫停</string>
+    <string name="label_resume">繼續</string>
+    <string name="back">返回</string>
+    <string name="system_camera">系統相機</string>
+
+    <string name="format_opacity">透明度: %d%%</string>
+    <string name="format_size">大小: %d%%</string>
+</resources>
