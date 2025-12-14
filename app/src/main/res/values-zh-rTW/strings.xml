@@ -17,6 +17,7 @@
     <string name="label_reset">還原</string>
     <string name="label_pause">暫停</string>
     <string name="label_resume">繼續</string>
+    <string name="label_screen_on">螢幕常亮</string>
     <string name="back">返回</string>
     <string name="system_camera">系統相機</string>
 

@@ -36,6 +36,9 @@ class DrawingViewModel : ViewModel() {
     private val _activePanel = MutableStateFlow(ControlPanel.NONE)
     val activePanel = _activePanel.asStateFlow()
 
+    private val _isKeepScreenOn = MutableStateFlow(false)
+    val isKeepScreenOn = _isKeepScreenOn.asStateFlow()
+
     enum class ControlPanel {
         OPACITY, SCALE, FLIP, NONE
     }
@@ -94,6 +97,11 @@ class DrawingViewModel : ViewModel() {
         if (!_isCameraOn.value) return
         val current = _imageState.value
         _imageState.value = current.copy(isFlippedVertical = !current.isFlippedVertical)
+    }
+
+    fun toggleKeepScreenOn() {
+        if (!_isCameraOn.value) return
+        _isKeepScreenOn.value = !_isKeepScreenOn.value
     }
 
     fun resetImage() {

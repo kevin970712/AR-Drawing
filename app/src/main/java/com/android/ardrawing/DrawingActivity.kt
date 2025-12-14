@@ -1,9 +1,11 @@
 package com.android.ardrawing
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
@@ -48,6 +50,7 @@ import androidx.compose.material.icons.rounded.Lock
 import androidx.compose.material.icons.rounded.LockOpen
 import androidx.compose.material.icons.rounded.Opacity
 import androidx.compose.material.icons.rounded.Refresh
+import androidx.compose.material.icons.rounded.Smartphone
 import androidx.compose.material.icons.rounded.SwapHoriz
 import androidx.compose.material.icons.rounded.SwapVert
 import androidx.compose.material.icons.rounded.Videocam
@@ -124,6 +127,20 @@ fun DrawingScreen(
     val isCameraOn by viewModel.isCameraOn.collectAsStateWithLifecycle()
     val isFlashlightOn by viewModel.isFlashlightOn.collectAsStateWithLifecycle()
     val activePanel by viewModel.activePanel.collectAsStateWithLifecycle()
+    val isKeepScreenOn by viewModel.isKeepScreenOn.collectAsStateWithLifecycle()
+
+    DisposableEffect(isKeepScreenOn) {
+        val window = (context as? Activity)?.window
+        if (isKeepScreenOn) {
+            window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        } else {
+            window?.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
+        onDispose {
+            // 當離開此畫面時，記得清除設定，以免影響其他頁面
+            window?.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
+    }
 
     Box(
         modifier = Modifier
@@ -359,6 +376,16 @@ fun DrawingScreen(
                         isActive = isFlashlightOn,
                         activeColor = Color(0xFFFFD700),
                         onClick = viewModel::toggleFlashlight,
+                        enabled = isCameraOn
+                    )
+
+                    // 螢幕常亮
+                    ControlIcon(
+                        icon = Icons.Rounded.Smartphone,
+                        label = stringResource(R.string.label_screen_on),
+                        isActive = isKeepScreenOn,
+                        activeColor = MaterialTheme.colorScheme.primary,
+                        onClick = viewModel::toggleKeepScreenOn,
                         enabled = isCameraOn
                     )
 
