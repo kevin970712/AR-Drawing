@@ -12,6 +12,7 @@
     *   **Size**
     *   **Flip (vertical & horizontal)**
     *   **Flashlight**
+    *   **Keep screen on**
     *   **Lock**
     *   **Reset**
     *   **Open system camera**
